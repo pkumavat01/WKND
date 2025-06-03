@@ -1,3 +1,4 @@
+
 .carousel .carousel-slides-container {
   position: relative;
 }
@@ -7,6 +8,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .carousel .carousel-slides {
@@ -34,6 +36,15 @@
 
 .carousel .carousel-slide:has(.carousel-slide-content[data-align='center']) {
   align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.carousel .carousel-slide .carousel-slide-content[data-align='center'] {
+  width: 100% !important; 
+  max-width: 100%;        
+  margin: 0 auto 1px;    
+  box-sizing: border-box;  
 }
 
 .carousel .carousel-slide:has(.carousel-slide-content[data-align='right']) {
@@ -41,8 +52,9 @@
 }
 
 .carousel .carousel-slide .carousel-slide-image picture {
-  position: absolute;
-  inset: 0;
+  position: relative; /* changed from absolute */
+  width: 100%;
+  display: block;
 }
 
 .carousel .carousel-slide .carousel-slide-image picture > img {
@@ -52,32 +64,29 @@
 }
 
 .carousel .carousel-slide .carousel-slide-content {
-  z-index: 1;
-  margin: 68px;
-  padding: 16px;
-  color: white;
-  background-color: rgb(19 19 19 / 75%);
-  position: relative;
+  position: static; /* make it flow after image */
+  margin: 12px auto 0;
+  background-color: white;
+  padding: 12px 24px;
   width: var(--slide-content-width, auto);
+  box-sizing: border-box;
 }
-
 .carousel .carousel-slide-indicators {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 6px 12px;
-  padding: 12px;
-  background-color: var(--light-color);
+  padding: 20px;
   line-height: 0;
 }
 
 .carousel .carousel-slide-indicator button {
-  width: 24px;
-  height: 24px;
+  width: 10px;
+  height: 10px;
   margin: 0;
   padding: 0;
   border-radius: 50%;
-  background-color: #dadada;
+  background-color: #818181;
   transition: background-color 0.2s;
 }
 
@@ -87,28 +96,18 @@
   background-color: var(--text-color);
 }
 
-.carousel .carousel-navigation-buttons {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 12px;
-  right: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1;
-}
+
 
 /* stylelint-disable-next-line no-descending-specificity */
 .carousel .carousel-navigation-buttons button {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  margin: 0;
-  border-radius: 50%;
-  padding: 0;
-  background-color: rgb(19 19 19 / 25%);
-  transition: background-color 0.2s;
+    position: relative;
+    width: 34px;
+    height: 34px;
+    margin: 0;
+    border-radius: 50%;
+    padding: 0;
+    background-color:none;
+    transition: background-color 0.2s;
 }
 
 .carousel .carousel-navigation-buttons button:hover,
@@ -134,20 +133,81 @@
   transform: translate(-50%, -50%) rotate(45deg);
   left: calc(50% - 2px);
 }
-
-@media (width >= 600px) {
+.button-container .button{
+    background-color: #ffea00;
+    font-size: 15px;
+    padding: 1rem 1.5rem;
+}
   .carousel .carousel-navigation-buttons {
-    left: 24px;
-    right: 24px;
+    position: absolute;   
+    transform: translateY(670px);
+   margin-right: 0;       /* Keeps it in document flow */
+    display: flex;
+    justify-content: flex-end;      /* Align buttons to right */
+    gap: 8px;
+    width: 50%;                    /* Match slide width */
+    padding: 12px 12px 0;   
+  }
+@media (width >= 600px) {
+    .carousel .carousel-slide .carousel-slide-image picture {
+  position: absolute;
+  inset: 0;
+}
+.carousel .carousel-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 12px;
+  padding: 20px;
+  line-height: 0;
+}
+  .carousel .carousel-slide {
+    justify-content: flex-end; /* Ensure content stays at bottom */
   }
 
-  .carousel .carousel-slide .carousel-slide-content {
-    --slide-content-width: calc((100% - 184px) / 2);
-
-    margin: 92px;
+  .carousel .carousel-slide .carousel-slide-content[data-align='center'] {
+    margin: 0 auto 24px; /* Bottom margin only, centered horizontally */
+    width: 100% !important;
+    max-width: 100%;
   }
+
+ .carousel .carousel-slide .carousel-slide-content {
+  z-index: 1;
+  margin: 40% auto 0;
+  padding: 6px 24px ;
+  color: black;
+  background-color: white;
+  position: relative;
+  --slide-content-width: 90%;
+}
 
   .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
     --slide-content-width: auto;
+  }
+
+
+
+ .carousel .carousel-navigation-buttons {
+    position: absolute;
+    bottom: -42px;         /* Stick to bottom */
+    right: 12px;          /* Align right */
+    top: auto;            /* Remove top */
+    left: auto;           /* Remove left */
+    transform: none;      /* Cancel vertical transform */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+    width: auto;
+    padding: 0;
+  }
+.carousel .carousel-slide .carousel-slide-image picture > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+  .carousel .carousel-navigation-buttons button {
+    margin: 0 4px;
   }
 }
