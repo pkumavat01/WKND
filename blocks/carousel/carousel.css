@@ -37,7 +37,7 @@
 .carousel .carousel-slide:has(.carousel-slide-content[data-align='center']) {
   align-items: center;
   justify-content: flex-end;
-  margin: 0;
+  margin: -100px;
 }
 
 .carousel .carousel-slide .carousel-slide-content[data-align='center'] {
