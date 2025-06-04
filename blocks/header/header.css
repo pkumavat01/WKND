@@ -15,7 +15,9 @@ header .nav-wrapper {
 header.nav-scrolled .nav-wrapper {
   height: var(--nav-height-scrolled);
 }
-
+header{
+  z-index: 1;
+}
 header nav {
   height: 100%;
   padding: 24px 24px;
@@ -132,7 +134,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 
 header .nav-brand {
   grid-area: brand;
-  font-size: var(--heading-font-size-s);
+  font-size: 60px;
   font-weight: 700;
   line-height: 1;
   flex-basis: 128px;
@@ -177,6 +179,42 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
+/* Style the container */
+header nav .nav-tools .default-content-wrapper p {
+  display: flex;
+  align-items: center;
+  background-color: #eeeded;
+  padding: 6px 74px 6px 6px;
+  cursor: text;
+  user-select: none;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Style the icon */
+header nav .nav-tools .icon-search {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+/* Make the icon image sized */
+header nav .nav-tools .icon-search img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Add the "Search" text after the icon using ::after */
+header nav .nav-tools .default-content-wrapper p::after {
+  content: "SEARCH";
+  color: #888;
+  font-size: 12px;
+  pointer-events: none;
+}
+
 
 /* =============== Desktop overrides =============== */
 @media (min-width: 1024px) {
@@ -184,14 +222,19 @@ header nav .nav-tools {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    padding: 0 32px;
+    padding: 0 80px;
   }
-
+  header.nav-scrolled .nav-wrapper {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
   header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
   }
-
+  header .nav-wrapper {
+  height: var(--nav-height-initial); /* ← use initial here */
+  transition: height 0.3s ease, padding 0.3s ease;
+}
   header nav .nav-hamburger {
     display: none;
     visibility: hidden;
@@ -235,6 +278,7 @@ header nav .nav-tools {
 
   header nav .nav-sections ul {
     display: flex;
+    justify-content: flex-end;
     gap: 24px;
     margin: 0;
   }
@@ -242,6 +286,8 @@ header nav .nav-tools {
   header nav .nav-sections .default-content-wrapper > ul > li {
     position: relative;
     flex: 0 1 auto;
+    font-size: 14px;
+    font-weight: 300;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
