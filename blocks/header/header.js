@@ -1,6 +1,15 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
+const redirectMap = {
+  '/search': 'https://www.google.com',
+};
+
+const target = redirectMap[window.location.pathname];
+if (target) {
+  window.location.href = target;
+}
+
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
@@ -173,4 +182,69 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  const navTools = document.querySelector('.nav-tools .default-content-wrapper');
+if (navTools) {
+  const searchPara = navTools.querySelector('p');
+  if (searchPara) {
+    searchPara.remove();
+
+    const searchWrapper = document.createElement('div');
+    searchWrapper.className = 'nav-search-wrapper';
+
+    const searchIcon = document.createElement('img');
+    searchIcon.src = '/icons/search.svg';
+    searchIcon.alt = 'Search icon';
+    searchIcon.className = 'nav-search-icon';
+
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = 'SEARCH';
+    searchInput.className = 'nav-search-input';
+    searchInput.setAttribute('aria-label', 'Search site');
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const query = e.target.value.trim();
+        if (query) {
+          window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        }
+      }
+    });
+
+    searchWrapper.appendChild(searchIcon);
+    searchWrapper.appendChild(searchInput);
+
+    navTools.appendChild(searchWrapper);
+  }
+}
+// Create overlay for background blur
+const overlay = document.createElement('div');
+overlay.className = 'nav-overlay';
+document.body.appendChild(overlay);
+
+// Toggle slide-in effect and overlay
+function toggleMobileNav(open) {
+  if (open) {
+    document.body.classList.add('nav-open');
+  } else {
+    document.body.classList.remove('nav-open');
+  }
+}
+
+// Hook into your existing hamburger toggle
+hamburger.addEventListener('click', () => {
+  const isOpen = nav.getAttribute('aria-expanded') === 'true';
+  toggleMenu(nav, navSections);
+  toggleMobileNav(!isOpen);
+});
+
+// Close overlay when clicking outside
+overlay.addEventListener('click', () => {
+  nav.setAttribute('aria-expanded', 'false');
+  toggleAllNavSections(navSections, false);
+  toggleMobileNav(false);
+});
+
+  
 }

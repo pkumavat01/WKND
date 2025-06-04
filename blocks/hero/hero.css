@@ -1,37 +1,98 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
+.hero-wrapper {
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero {
+.hero.left {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+/* Image container */
+.hero.left > div:first-child {
+  width: 100%;
+  height: 50vh;
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
-
-.hero img {
-  object-fit: cover;
+.hero.left picture,
+.hero.left img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
+/* Text container */
+.hero.left > div:last-child {
+  padding: 1.5rem;
+  background-color: white;
+}
+
+.hero.left h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.hero.left p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Desktop & tablets */
+@media (min-width: 768px) {
+  .hero.left.block{
+    margin-bottom: 3rem;
   }
+  .hero-wrapper {
+    flex-direction: row;
+    height: auto;
+    padding: 2rem;
+  }
+  
+  .hero.left {
+    flex-direction: row;
+    height: 100%; 
+  }
+
+  .hero.left > div:first-child {
+    width: 70%;
+    height: 100%;
+    position: relative;
+  }
+
+  .hero.left > div:first-child picture,
+  .hero.left > div:first-child picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero.left > div:last-child {
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color:  #f0f0f0; ;
+  }
+  /* Immediate parent div of picture */
+.hero.left > div:first-child > div[data-valign="middle"] {
+  width: 100%;
+  height: 90%; 
+  position: relative; 
+  overflow: hidden;
+}
+
+.hero.left > div:first-child > div[data-valign="middle"] picture,
+.hero.left > div:first-child > div[data-valign="middle"] picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 }

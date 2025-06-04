@@ -179,17 +179,6 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
-/* Style the container */
-header nav .nav-tools .default-content-wrapper p {
-  display: flex;
-  align-items: center;
-  background-color: #eeeded;
-  padding: 6px 74px 6px 6px;
-  cursor: text;
-  user-select: none;
-  font-size: 14px;
-  color: #555;
-}
 
 /* Style the icon */
 header nav .nav-tools .icon-search {
@@ -222,10 +211,10 @@ header nav .nav-tools .default-content-wrapper p::after {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    padding: 0 80px;
+    padding: 0 50px;
   }
   header.nav-scrolled .nav-wrapper {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
   header nav[aria-expanded='true'] {
     min-height: 0;
@@ -321,4 +310,31 @@ header nav .nav-tools .default-content-wrapper p::after {
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
   }
+  .nav-search-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;  
+  padding: 6px 10px;
+  max-width: 250px;
 }
+
+.nav-search-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  transform: rotateZ(90deg);
+  font-weight: 500;
+}
+
+.nav-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: #555;
+}
+
+}
+
+

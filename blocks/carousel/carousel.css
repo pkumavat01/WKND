@@ -149,6 +149,9 @@
     padding: 12px 12px 0;   
   }
 @media (width >= 600px) {
+.carousel.block{
+  margin-bottom: 3rem;
+}
     .carousel .carousel-slide .carousel-slide-image picture {
   position: absolute;
   inset: 0;
