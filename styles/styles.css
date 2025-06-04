@@ -142,6 +142,9 @@ pre {
   white-space: pre;
 }
 
+main{
+  margin: 10rem 4rem 0 4rem;
+}
 main > div {
   margin: 0;
 }
@@ -264,70 +267,7 @@ main .section.highlight {
   padding: 0 0;
 }
 
-/* FAQ PAGE STYLING */
-
-/* Make the whole section a flex container */
-.section-heading-container.accordion-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
-  justify-content:flex-start ;
+/*ABOUT*/
+.default-content-wrapper p em{
+  font-size: var(--body-font-size-xs);
 }
-
-/* LEFT SECTION: Heading, Image, Text, Accordion */
-.section-heading-wrapper,
-.default-content-wrapper,
-.accordion-wrapper {
-  flex: 1 1 65%;
-  max-width: 65%;
-}
-
-/* RIGHT SECTION: Contact Info */
-.contact-wrapper {
-  flex: 1 1 30%;
-  max-width: 30%;
-  padding: 2rem;
-  align-self: flex-start; /* ✅ aligns this item to top of flex row */
-  order: 1; 
-}
-
-/* Optional: Style image */
-.default-content-wrapper picture img {
-  width:100%;
-  height: auto;
-}
-.default-content-wrapper p{
-  width: 65%;
-  line-height: 40px;
-}
-/* Make sure the contact section appears after accordion */
-
-/* Make accordion items look cleaner 
-.accordion-item {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 1rem;
-}
-
-.accordion-item summary h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-/* Responsive: stack on smaller screens 
-@media (max-width: 768px) {
-  .section-heading-container.accordion-container {
-    flex-direction: column;
-  }
-
-  .section-heading-wrapper,
-  .default-content-wrapper:first-of-type,
-  .accordion-wrapper,
-  .default-content-wrapper:last-of-type {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-}
-*/
