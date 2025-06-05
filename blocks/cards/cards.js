@@ -49,7 +49,7 @@ export default function decorate(block) {
 */
 export default async function decorate(block) {
   try {
-    const res = await fetch('https://main--wknd--pkumavat01.aem.page/query-index.json');
+    const res = await fetch('/query-index.json');
     if (!res.ok) throw new Error('Failed to fetch query-index.json');
 
     const json = await res.json();
