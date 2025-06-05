@@ -61,3 +61,14 @@
   color: #555;
   text-transform: uppercase;
 }
+
+.cards-card-body h3:empty::before {
+  content: 'Untitled';
+  color: #999;
+}
+
+.cards-card-body p:empty::before {
+  content: 'No description available';
+  color: #aaa;
+  font-style: italic;
+}

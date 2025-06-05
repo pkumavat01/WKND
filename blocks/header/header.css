@@ -1,3 +1,4 @@
+
 :root {
   --nav-height-initial: 200px;
   --nav-height-scrolled: 90px;
@@ -138,11 +139,13 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 
 header .nav-brand {
   grid-area: brand;
-  font-size: 60px;
+  font-size: var(--heading-font-size-xxl);
   font-weight: 700;
   line-height: 1;
   flex-basis: 128px;
+  font-family: "Source Sans Pro", sans-serif; 
 }
+
 
 header nav .nav-brand img {
   width: 128px;
@@ -272,7 +275,6 @@ header nav .nav-tools .default-content-wrapper p::after {
   header nav .nav-sections ul {
     display: flex;
     justify-content: flex-end;
-    gap: 24px;
     margin: 0;
   }
 

@@ -1,8 +1,6 @@
-
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
- 
   let indexData = [];
   try {
     const res = await fetch('/query-index.json');
@@ -28,9 +26,6 @@ export default async function decorate(block) {
 
     const a = document.createElement('a');
     a.href = article.path || '/404.html';
-    a.style.display = 'block';
-    a.style.color = 'inherit';
-    a.style.textDecoration = 'none';
 
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'cards-card-image';
@@ -43,15 +38,14 @@ export default async function decorate(block) {
     bodyWrapper.className = 'cards-card-body';
 
     const titleEl = document.createElement('h3');
-    titleEl.textContent = article.title || 'Untitled';
+    titleEl.textContent = article.title;
 
     const descEl = document.createElement('p');
-    descEl.textContent = article.description || '';
+    descEl.textContent = article.description;
 
     bodyWrapper.appendChild(titleEl);
     bodyWrapper.appendChild(descEl);
 
-   
     a.appendChild(imageWrapper);
     a.appendChild(bodyWrapper);
     li.appendChild(a);
@@ -61,4 +55,3 @@ export default async function decorate(block) {
   block.textContent = '';
   block.appendChild(ul);
 }
-
