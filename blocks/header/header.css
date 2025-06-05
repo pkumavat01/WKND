@@ -46,8 +46,12 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+  text-decoration: none;
 }
-
+header nav li:hover{
+  background-color: var(--link-hover-color);
+  text-decoration: none;
+}
 header nav .nav-hamburger {
   grid-area: hamburger;
   height: 22px;
@@ -158,10 +162,10 @@ header nav[aria-expanded='true'] .nav-sections {
   align-self: start;
 }
 
-header nav .nav-sections ul {
+header nav .nav-sections ul li{
   list-style: none;
-  padding-left: 0;
   font-size: var(--body-font-size-s);
+  padding:1rem ;
 }
 
 header nav .nav-sections ul > li {

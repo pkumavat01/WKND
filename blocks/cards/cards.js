@@ -6,48 +6,37 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
 
-    let url = '';
-    const lastChild = row.lastElementChild;
-    console.log(lastChild)
-    
-    if (lastChild) {
-      const link = lastChild.querySelector('a');
-      if (link && link.href) {
-        url = link.href;
-        const linkP = link.closest('p');
-        if (linkP) linkP.remove();
-      }
-    }
-
+    // Move all children of row to the <li>
     while (row.firstElementChild) li.appendChild(row.firstElementChild);
 
-    if (url) {
-      const a = document.createElement('a');
-      a.href = url;
-      a.style.display = 'block';       
-      a.style.color = 'inherit';       
-      a.style.textDecoration = 'none'; 
-      while (li.firstChild) a.appendChild(li.firstChild);
-      li.appendChild(a);
-    }
-
+    // Apply card styling
     [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
+      if (div.children.length === 1 && div.querySelector('picture')) {
+        div.className = 'cards-card-image';
+      } else {
+        div.className = 'cards-card-body';
+      }
     });
 
     ul.appendChild(li);
   });
 
+  // Optimize pictures
   ul.querySelectorAll('picture > img').forEach((img) => {
-    img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
+    img.closest('picture').replaceWith(
+      createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])
+    );
   });
 
   block.textContent = '';
   block.appendChild(ul);
 }
 */
+/*
 export default async function decorate(block) {
+  [...block.children].forEach((row) => {
+    console.log(row.firstChildElement)
+  })
   try {
     const res = await fetch('/query-index.json');
     if (!res.ok) throw new Error('Failed to fetch query-index.json');
@@ -99,4 +88,71 @@ export default async function decorate(block) {
     console.error('Error decorating magazine-listing block:', err);
     block.innerHTML = '<p>Failed to load magazine articles.</p>';
   }
+}*/
+import { createOptimizedPicture } from '../../scripts/aem.js';
+
+export default async function decorate(block) {
+  // Fetch query-index.json
+  let indexData = [];
+  try {
+    const res = await fetch('/query-index.json');
+    if (res.ok) {
+      const json = await res.json();
+      indexData = json.data || [];
+    } else {
+      console.warn('Failed to fetch query-index.json');
+    }
+  } catch (e) {
+    console.warn('Error fetching query-index.json:', e);
+  }
+
+  // Filter for /magazine/ entries only
+  const magazineArticles = indexData.filter(entry =>
+    entry.path && entry.path.startsWith('/magazine/')
+  );
+
+  const ul = document.createElement('ul');
+
+  magazineArticles.forEach((article) => {
+    const li = document.createElement('li');
+    li.className = 'cards-card';
+
+    const a = document.createElement('a');
+    a.href = article.path || '/404.html';
+    a.style.display = 'block';
+    a.style.color = 'inherit';
+    a.style.textDecoration = 'none';
+
+    // --- Image ---
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = 'cards-card-image';
+    if (article.image) {
+      const optimizedPicture = createOptimizedPicture(article.image, article.title || '', false, [{ width: '750' }]);
+      imageWrapper.appendChild(optimizedPicture);
+    }
+
+    // --- Body ---
+    const bodyWrapper = document.createElement('div');
+    bodyWrapper.className = 'cards-card-body';
+
+    const titleEl = document.createElement('h3');
+    titleEl.textContent = article.title || 'Untitled';
+
+    const descEl = document.createElement('p');
+    descEl.textContent = article.description || '';
+
+    bodyWrapper.appendChild(titleEl);
+    bodyWrapper.appendChild(descEl);
+
+    // Combine
+    a.appendChild(imageWrapper);
+    a.appendChild(bodyWrapper);
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+
+  // Clear the original block and append new content
+  block.textContent = '';
+  block.appendChild(ul);
 }
+
