@@ -2,7 +2,7 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
-  // Fetch query-index.json
+ 
   let indexData = [];
   try {
     const res = await fetch('/query-index.json');
@@ -16,7 +16,6 @@ export default async function decorate(block) {
     console.warn('Error fetching query-index.json:', e);
   }
 
-  // Filter for /magazine/ entries only
   const magazineArticles = indexData.filter(entry =>
     entry.path && entry.path.startsWith('/magazine/')
   );
@@ -33,7 +32,6 @@ export default async function decorate(block) {
     a.style.color = 'inherit';
     a.style.textDecoration = 'none';
 
-    // --- Image ---
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'cards-card-image';
     if (article.image) {
@@ -41,7 +39,6 @@ export default async function decorate(block) {
       imageWrapper.appendChild(optimizedPicture);
     }
 
-    // --- Body ---
     const bodyWrapper = document.createElement('div');
     bodyWrapper.className = 'cards-card-body';
 
@@ -54,7 +51,7 @@ export default async function decorate(block) {
     bodyWrapper.appendChild(titleEl);
     bodyWrapper.appendChild(descEl);
 
-    // Combine
+   
     a.appendChild(imageWrapper);
     a.appendChild(bodyWrapper);
     li.appendChild(a);
