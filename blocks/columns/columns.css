@@ -18,6 +18,67 @@
   .columns > div > div:last-child{
     margin-left: 8%;
   }
+  .columns > div > div h1{
+    font-size: var(--heading-font-size-xxl);
+    font-weight: 400;
+  }
+  .columns > div > div h3 {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: var(--body-font-family);
+    font-weight: bold;
+  }
+
+  .columns > div > div p{
+    line-height: 50px;
+    text-align: justify;
+  }
+  .columns > div > div:last-child p:nth-of-type(2){
+    padding: 0;
+    
+  }
+  .columns > div > div:last-child h5{
+    font-family: var(--body-font-family);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 12px;
+  
+    padding: 2rem 0 4rem 0;
+  }
+  .columns > div > div:last-child p{
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .columns > div > div:last-child ul{
+    padding: 0;
+    list-style-type: none;
+  }
+  .columns > div > div:last-child ul:last-child li{
+    height:120px;
+    border-left: 5px solid #d0d0d0;
+    padding: 2rem 1rem;
+    margin-bottom: 10px;
+  }
+  .columns > div > div:last-child ul:last-child li:hover{
+    border-left: 5px solid black;
+    background-color: var(--link-hover-color);
+  }
+  
+  .columns > div > div:last-child ul:last-child li .title {
+    font-weight: 300;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .columns > div > div:last-child ul:last-child li .date {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #888;
+  }
+
 }
 
 

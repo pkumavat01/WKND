@@ -1,4 +1,10 @@
-.cards > ul {
+.cards-container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap:44px;
+}
+.card__click-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -7,28 +13,59 @@
   grid-gap: 24px;
 }
 
-.cards > ul > li {
+.card__click-list > li {
   background-color: var(--background-color);
 }
 
-.cards .cards-card-body {
+.card__click-body {
   margin: 0;
-
 }
 
-.cards .cards-card-image {
+.card__click-image {
   line-height: 0;
 }
 
-.cards > ul > li img {
+.card__click-image img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
-.cards .cards-card-body p:nth-of-type(2) {
-  overflow: hidden;          /* Hide overflow */
-  white-space: nowrap;       /* Keep text on one line */
-  text-overflow: ellipsis;   /* Show ... at end if text is too long */
-  margin: 0.5rem 0;          /* optional spacing */
+.card__click-body p:nth-of-type(2) {
+  overflow: hidden;         
+  white-space: nowrap;     
+  text-overflow: ellipsis;  
+  margin: 0.5rem 0;         
 }
+
+.cards.column.block > div > div ul{
+  padding: 0;
+}
+.card__column-item {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 3px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card__column-item:hover{
+  background-color: var(--link-hover-color);
+  border-left:3px solid black;
+}
+
+.card__column-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.card__column-date {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+
