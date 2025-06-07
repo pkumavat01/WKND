@@ -144,7 +144,7 @@ pre {
 }
 
 main{
-  margin: 10rem 4rem 0 4rem;
+  margin: 5rem 1rem 0 1rem;
 }
 main > div {
   margin: 0;
@@ -270,4 +270,10 @@ main .section.highlight {
 /*ABOUT*/
 .default-content-wrapper p em{
   font-size: var(--body-font-size-xs);
+}
+/* ≥1200px */
+@media screen and (min-width: 1200px) {
+  main{
+    padding: 4rem 2rem 0 2rem;
+  }
 }

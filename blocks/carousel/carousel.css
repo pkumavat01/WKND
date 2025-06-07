@@ -1,4 +1,7 @@
 
+.carousel-wrapper{
+  margin: auto;
+}
 .carousel .carousel-slides-container {
   position: relative;
 }
