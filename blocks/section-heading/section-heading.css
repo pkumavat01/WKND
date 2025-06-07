@@ -6,6 +6,7 @@
   font-size: 2rem;
   margin-bottom: 1rem;
   padding-bottom: 1rem; 
+  font-weight: 400;
 }
 
 .section-heading h2::after {

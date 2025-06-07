@@ -1,0 +1,84 @@
+/* Breadcrumb wrapper */
+.article-content > div:first-child p {
+  font-size: 14px;
+  color: #555;
+  font-family: 'Segoe UI', sans-serif;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.article-content > div:first-child a {
+  color: black;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.article-content > div:first-child a:hover {
+  text-decoration: none;
+}
+
+.article-content > div:first-child a::after{
+    content: '▶'; 
+    padding: 3px;
+    color: var(--link-hover-color);
+}
+
+.article-content > div:first-child p {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+/*Introduction*/
+.article-content > div:nth-child(2)  h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.article-content > div:nth-child(2) h5 {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-family: var(--body-font-family);
+}
+
+.article-content > div:nth-child(2) p {
+  font-size: 1rem;
+  line-height: 3;
+  max-width: 900px;
+  margin-bottom: 1rem;
+  
+  text-align: justify;
+}
+
+/*quote*/
+.quote-block {
+  background-color: #eee;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.quote-text {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-family: serif;
+  margin: 0;
+  padding: 10px;
+}
+
+.quote-author {
+  font-size: 1rem;
+  color: #222;
+  margin-top: 2rem;
+}
+
+.quote-underline {
+  width: 80px;
+  height: 3px;
+  background-color: var(--link-hover-color);
+  margin: 0 0 1rem 1rem;
+}
