@@ -145,11 +145,19 @@ header .nav-brand {
   font-size: var(--heading-font-size-xxl);
   font-weight: 700;
   line-height: 1;
-  flex-basis: 128px;
-  font-family: "Source Sans Pro", sans-serif; 
 }
 
-
+.nav-brand .default-content-wrapper a {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  text-indent: -9999px; /* hide text */
+  overflow: hidden;
+  background-image: url('../../icons/wknd-logo-dk.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+}
 header nav .nav-brand img {
   width: 128px;
   height: auto;
@@ -347,5 +355,44 @@ header nav .nav-tools .default-content-wrapper p::after {
   }
 
 }
+#nav {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
 
+/* Hamburger Icon Styling 
+.nav-hamburger button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  z-index: 1001;
+}
+
+.nav-hamburger-icon span,
+.nav-hamburger-icon span::before,
+.nav-hamburger-icon span::after {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  position: relative;
+  transition: 0.4s;
+}
+
+.nav-hamburger-icon span::before,
+.nav-hamburger-icon span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.nav-hamburger-icon span::before {
+  top: -8px;
+}
+
+.nav-hamburger-icon span::after {
+  top: 8px;
+}*/
 

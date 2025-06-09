@@ -20,25 +20,69 @@
   --link-hover-color: #ffea00;
 
   /* fonts */
-  --heading-font-family: Asar, Georgia, "Times New Roman", Times, serif;
+ --heading-font-family: 'Asar', Georgia, "Times New Roman", Times, serif;
   --body-font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
 
   /* body sizes */
---body-font-size-m: 18px;
---body-font-size-s: 12px;
+  --body-font-size-m: 18px;
+  --body-font-size-s: 12px;
 
   /* heading sizes */
---heading-font-size-xxl: 40px;
---heading-font-size-xl: 36px;
---heading-font-size-l: 24px;
---heading-font-size-m: 16px;
---heading-font-size-s: 14px;
---heading-font-size-xs: 10px;
+  --heading-font-size-xxl: 40px;
+  --heading-font-size-xl: 36px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 16px;
+  --heading-font-size-s: 14px;
+  --heading-font-size-xs: 10px;
 
 
   /* nav height */
   --nav-height: 64px;
+}
+/* wknd-icon-font */
+@font-face {
+  font-family: 'wknd-icon-font';
+  src: url('./fonts/wknd-icon-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Source Sans Pro - Regular (woff2) */
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('./fonts/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Asar Regular */
+@font-face {
+  font-family: 'Asar';
+  src: url('./fonts/sZlLdRyI6TBIbkEaDQ.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Source Sans Pro - SemiBold (woff2) */
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('./fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7nsDI.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Source Sans Pro - Italic (woff2) */
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('./fonts/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
 /* fallback fonts */
@@ -54,7 +98,7 @@
   src: local('Arial');
 }
 
-@media (width >= 900px) {
+@media (width >=900px) {
   :root {
     /* body sizes */
     --body-font-size-m: 18px;
@@ -113,14 +157,31 @@ h6 {
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
 
-  
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
+
+
 dl,
 ol,
 ul,
@@ -143,10 +204,11 @@ pre {
   white-space: pre;
 }
 
-main{
+main {
   margin: 5rem 1rem 0 1rem;
 }
-main > div {
+
+main>div {
   margin: 0;
 }
 
@@ -169,16 +231,17 @@ a:hover {
   text-decoration: underline;
 }
 
-button{
+button {
   position: relative;
   width: 34px;
   height: 34px;
   margin: 0;
   padding: 0;
-  background-color:none;
+  background-color: none;
   transition: background-color 0.2s;
 
 }
+
 /* buttons */
 a.button:any-link {
   box-sizing: border-box;
@@ -243,23 +306,17 @@ main img {
 }
 
 /* sections */
-main > .section {
+main>.section {
   margin: 0 0;
 }
 
-main > .section > div {
+main>.section>div {
   max-width: 1200px;
   padding: 0 0;
 }
 
-main > .section:first-of-type {
+main>.section:first-of-type {
   margin-top: 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 0;
-  }
 }
 
 /* section metadata */
@@ -271,12 +328,131 @@ main .section.highlight {
 }
 
 /*ABOUT*/
-.default-content-wrapper p em{
+.default-content-wrapper p em {
   font-size: var(--body-font-size-xs);
 }
+
+
+/*Articles Page*/
+.article-content .cards-container .default-content-wrapper{
+  padding: 0 3rem 0 0;
+}
+.article-content .section.cards-container p:first-of-type picture img {
+  width: 100vw;
+}
+
+.article-content h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.article-content h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-family: var(--body-font-family);
+}
+
+.article-content p {
+  font-size: 1rem;
+  line-height: 3;
+  max-width: 900px;
+  margin: 0;
+  text-align: justify;
+}
+
+.article-content h2 {
+  position: relative;
+  left: 0;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 400;
+}
+
+.article-content h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 2px;
+  background: #ffea00;
+  border-radius: 2px;
+}
+.article-content p em {
+  display: block;
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 1rem 0;
+  font-family: serif;
+  margin: 0;
+  padding: 2rem 1rem ;
+  font-style: normal;
+  line-height: 40px;
+  box-sizing: border-box;
+  background-color: #e8e8e8;
+}
+.article-content h6{
+  padding: 2rem 1rem ;
+  font-weight: 400;
+  margin: 0;
+  background-color: #e8e8e8;
+  font-size: 15px;
+}
+.article-content p em::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  width: 10%;
+  height: 2px;
+  background: #ffea00;
+  border-radius: 2px;
+}
+.article-content p strong {
+  font-size: 1rem;
+  background-color: transparent;
+  font-style: italic;
+
+}
+
+.article-content main>div {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media (min-width:600px) {
+  .article-content-wrapper {
+    width: 100%;
+  }
+  .article-content .cards-container .default-content-wrapper {
+    padding: 0 3rem 0 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (width >=900px) {
+  main>.section>div {
+    padding: 0 0;
+  }
+}
+
 /* ≥1200px */
 @media screen and (min-width: 1200px) {
-  main{
+  main {
     padding: 4rem 2rem 0 2rem;
+  }
+  .article-content main>div {
+  display: flex;
+
+  flex-direction: row;
   }
 }

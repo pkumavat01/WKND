@@ -76,7 +76,107 @@
 
 
 .cards-container>div:last-child{
-      border-bottom: 1px solid #cecece;
-    padding-bottom: 2rem;
-    margin-bottom: 5rem;
+    padding-bottom: 1rem;
+}
+.cards.author.block {
+  padding: 3rem 0;
+  margin: 3rem 2rem;
+  border-top: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards.author.block > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cards.author.block picture img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cards.author.block > div > div[data-valign="middle"]:first-child {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards.author.block > div > div[data-valign="middle"]:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+  position: relative;
+}
+
+/* Author text */
+.cards.author.block > div > div[data-valign="middle"]:last-child p {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.cards.author.block > div > div[data-valign="middle"]:last-child p:first-child {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: none;
+  color: #000;
+  margin-top: -10px;
+}
+
+/* Optional custom positioning (verify if still needed) */
+.cards.author.block > div > div[data-valign="middle"] p:nth-of-type(2) {
+  margin-left: -175px;
+  margin-top: 40px;
+}
+.cards.author.block > div > div[data-valign="middle"] p:nth-of-type(3) {
+  margin-left: 70px;
+  margin-top: 40px;
+}
+
+/* Social buttons container */
+.cards.author.block > div > div[data-valign="middle"]:last-child .button-container,
+.cards.author.block > div > div[data-valign="middle"]:last-child p.button-container {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Social buttons */
+.cards.author.block a.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #1a1a1a;
+  color: white;
+  text-decoration: none;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  border: none;
+}
+
+/* SVG inside buttons */
+.cards.author.block a.button svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  display: block;
+}
+.cards.author.block a.button svg path {
+  fill: white;
+}
+
+/* Hover effect */
+.cards.author.block a.button:hover {
+  background-color: #333;
 }

@@ -219,12 +219,12 @@
         navTools.appendChild(searchWrapper);
       }
     }
-    // Create overlay for background blur
+    
     const overlay = document.createElement('div');
     overlay.className = 'nav-overlay';
     document.body.appendChild(overlay);
 
-    // Toggle slide-in effect and overlay
+    
     function toggleMobileNav(open) {
       if (open) {
         document.body.classList.add('nav-open');
@@ -242,7 +242,7 @@
     });
 
     // Highlight active page nav link
-    const currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+    const currentPath = window.location.pathname.replace(/\/$/, ''); 
     const navLinks = nav.querySelectorAll('.nav-sections a');
 
     navLinks.forEach((link) => {
