@@ -112,7 +112,7 @@
   margin: 0;
   border-radius: 50%;
   padding: 0;
-  background-color: none;
+  background-color: transparent;
   transition: background-color 0.2s;
 }
 
@@ -253,9 +253,18 @@
   .carousel .carousel-navigation-buttons button {
     margin: 0 4px;
   }
+    .carousel .carousel-slide .carousel-slide-content {
+    z-index: 1;
+    margin: 40% auto 0;
+    padding: 6px 24px;
+    color: black;
+    background-color: white;
+    position: relative;
+    --slide-content-width: 90%;
+  }
 }
 
-@media (max-width:900px) {
+@media (min-width:900px) {
   .carousel .carousel-slide {
     flex-direction: column;
     align-items: center;
@@ -265,29 +274,9 @@
 
 }
 
-@media (max-width: 1200px) {
-  .carousel .carousel-slide {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .carousel .carousel-slide .carousel-slide-image {
-    width: 100%;
-    height: 45%;
-  }
-
-  .carousel .carousel-slide .carousel-slide-content {
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem;
-    background-color: white;
-    text-align: left;
-    position: relative;
-  }
-
-  .carousel .carousel-slide .carousel-slide-image picture {
-    position: relative;
+@media (min-width: 1200px) {
+  .carousel.block nav{
+    margin-bottom: 2rem;
   }
 
 }
