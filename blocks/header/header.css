@@ -12,7 +12,10 @@ header .nav-wrapper {
   z-index: 2;
   transition: height 0.3s ease, padding 0.3s ease;
 }
-
+header nav .nav-sections ul li.active-page {
+  background-color: var(--link-hover-color);
+  transition: ease 0.3s
+}
 header.nav-scrolled .nav-wrapper {
   height: var(--nav-height-scrolled);
 }
@@ -37,7 +40,7 @@ header nav[aria-expanded='true'] {
     'sections sections' 1fr
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
-  min-height: 100dvh;
+  min-height: 100vh;
 }
 
 header nav p {
@@ -210,9 +213,35 @@ header nav .nav-tools .default-content-wrapper p::after {
   font-size: 12px;
   pointer-events: none;
 }
+.nav-search-wrapper{
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;  
+  padding: 6px 10px;
+  max-width: 250px;
+}
+.nav-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: #555;
+}
+.nav-search-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  transform: rotateZ(90deg);
+  font-weight: 500;
+}
+@media(min-width:600px){
+ 
+}
+@media(min-width:900px){
 
-
-/* =============== Desktop overrides =============== */
+}
 @media (min-width: 1024px) {
   header nav {
     display: flex;
@@ -316,30 +345,6 @@ header nav .nav-tools .default-content-wrapper p::after {
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
   }
-  .nav-search-wrapper {
-  display: flex;
-  align-items: center;
-  background-color: #f0f0f0;  
-  padding: 6px 10px;
-  max-width: 250px;
-}
-
-.nav-search-icon {
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  transform: rotateZ(90deg);
-  font-weight: 500;
-}
-
-.nav-search-input {
-  border: none;
-  outline: none;
-  background: transparent;
-  width: 100%;
-  font-size: 14px;
-  color: #555;
-}
 
 }
 

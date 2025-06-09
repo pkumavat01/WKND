@@ -19,6 +19,14 @@
 .card__click-image {
   line-height: 0;
 }
+.card__click-body h3{
+  margin: 0.5rem 0 0.5rem;
+    font-size: 1.2rem;
+    color: #222;
+    text-transform: uppercase;
+    padding: 0 0 1rem 0;
+    line-height: 30px;
+}
 
 .card__click-image img {
   width: 100%;
@@ -26,11 +34,14 @@
   object-fit: cover;
 }
 
-.card__click-body p:nth-of-type(2) {
+.card__click-body p {
   overflow: hidden;         
   white-space: nowrap;     
   text-overflow: ellipsis;  
-  margin: 0.5rem 0;         
+  margin: 0.5rem 0; 
+  text-transform: uppercase;        
+  font-size: 14px;
+  color: #555;
 }
 
 .cards.column.block > div > div ul{
@@ -64,3 +75,8 @@
 }
 
 
+.cards-container>div:last-child{
+      border-bottom: 1px solid #cecece;
+    padding-bottom: 2rem;
+    margin-bottom: 5rem;
+}

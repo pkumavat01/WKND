@@ -1,7 +1,10 @@
-.content-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    justify-self: flex-start;
+.contact.block >div >div>h3{
+    font-weight: 400;
+}
+.contact.block > div > div > p{
+font-size: 12px;
+line-height: 30px;
+}
+.contact.block > div > div > p a{
+    color:blue;
 }

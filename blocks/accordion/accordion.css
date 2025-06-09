@@ -3,7 +3,7 @@
 }
 
 /* FAQ PAGE STYLING */
-.section-heading-container.accordion-container {
+.accordion-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -11,34 +11,34 @@
   justify-content:flex-start ;
 }
 
-/* LEFT SECTION: Heading, Image, Text, Accordion */
 .section-heading-wrapper,
-.default-content-wrapper,
 .accordion-wrapper {
   flex: 1 1 65%;
   max-width: 65%;
 }
-
-/* RIGHT SECTION: Contact Info */
+.accordion-wrapper{
+  margin-bottom: 2rem;
+}
 .contact-wrapper {
   flex: 1 1 30%;
   max-width: 30%;
   padding: 2rem;
   align-self: flex-start;
-  order: 1; 
+  justify-content: center;
+  order: 1;
 }
-
+.contact.block > div > div{
+  margin-left:100px;
+}
 .default-content-wrapper picture img {
-  width:100%;
-  height: auto;
+  width:auto;
 }
 .default-content-wrapper p{
-  width: 65%;
+  width: 100%;
   line-height: 40px;
+  text-align: justify;
 }
-.section-heading-wrapper {
-  margin-top: 2rem;
-}
+
 
 .accordion-container h1 {
   margin-top: 6rem;
@@ -54,13 +54,13 @@
 }
 
 .accordion details p {
-  margin-bottom: 0.8em;
+  margin-bottom: 0.5rem;
+  font-size: small;
 }
 
 .accordion details summary {
   position: relative;
-  padding: 0 12px;
-  padding-right: 38px;
+  padding: 5px 12px;
   cursor: pointer;
   list-style: none;
   overflow: auto;
@@ -98,39 +98,51 @@
     margin-top: 0;
 }
 .accordion-item h3{
-    font-size: var(--heading-font-size-xs);
-    text-transform: capitalize;
-    font-weight: 200;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-family: var(--body-font-family);
+    font-weight: bold;
 }
 .accordion details .accordion-item-body {
   padding: 0 12px;
 }
-
+ .contact.block > div > div{
+    margin-left:0;
+  }
 .accordion details[open] .accordion-item-body {
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
 }
-@media (min-width: 1024px) {
+@media (min-width:600px){
+    .contact.block > div > div{
+    margin-left:0;
+  }
+}
+@media (min-width:900px){
+    .contact.block > div > div{
+    margin-left:80px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-heading-wrapper,
+.accordion-wrapper {
+  flex: 1 1 65%;
+  max-width: 65%;
+}
   .accordion-container {
-    padding: 8rem 4rem;
+    padding: 0;
   }
-
-  .section-heading-wrapper {
-    margin-top: 4rem;
+      .contact.block > div > div{
+    margin-left:100px;
   }
-
   .accordion details + details {
     margin-top: 0;
   }
 
   .accordion details summary {
-    padding: 0 16px;
     padding-right: 46px;
   }
 
-  .accordion details .accordion-item-body {
-    padding: 0 16px;
-  }
 
   .accordion-container h1 {
     margin-top: 10rem;

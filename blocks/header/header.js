@@ -241,5 +241,17 @@
       toggleMobileNav(false);
     });
 
+    // Highlight active page nav link
+    const currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+    const navLinks = nav.querySelectorAll('.nav-sections a');
 
+    navLinks.forEach((link) => {
+      const linkPath = new URL(link.href).pathname.replace(/\/$/, '');
+      if (linkPath === currentPath) {
+        const li = link.closest('li');
+        if (li) {
+          li.classList.add('active-page');
+        }
+      }
+    });
   }

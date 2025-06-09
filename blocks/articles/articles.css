@@ -14,7 +14,11 @@
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
+.articles-container .button-container{
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 2rem;
+  margin-bottom: 5rem;
+}
 
 .cards-card a {
   display: flex;

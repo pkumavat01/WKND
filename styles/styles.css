@@ -161,7 +161,7 @@ button {
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
-  overflow-wrap: break-word;
+  /*overflow-wrap: break-word;*/
 }
 
 a:hover {
@@ -189,8 +189,9 @@ a.button:any-link {
   padding: 0.5em 1.2em;
   font-family: var(--body-font-family);
   font-style: normal;
-  font-weight: 300;
+  font-weight: bold;
   line-height: 1.25;
+  font-size: 12px;
   text-align: center;
   text-decoration: none;
   background-color: var(--link-color);
@@ -199,6 +200,8 @@ a.button:any-link {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
 }
 
 a.button:hover,
