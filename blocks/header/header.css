@@ -151,7 +151,7 @@ header .nav-brand {
   display: inline-block;
   width: 200px;
   height: 50px;
-  text-indent: -9999px; /* hide text */
+  text-indent: -9999px; 
   overflow: hidden;
   background-image: url('../../icons/wknd-logo-dk.svg');
   background-repeat: no-repeat;
@@ -169,7 +169,11 @@ header nav .nav-sections {
   visibility: hidden;
   flex: 1 1 auto;
 }
-
+header nav[aria-expanded='false'] .nav-sections {
+  display: none;
+  visibility: hidden;
+  align-self: start;
+}
 header nav[aria-expanded='true'] .nav-sections {
   display: block;
   visibility: visible;
@@ -248,7 +252,7 @@ header nav .nav-tools .default-content-wrapper p::after {
  
 }
 @media(min-width:900px){
-
+  
 }
 @media (min-width: 1024px) {
   header nav {
@@ -265,7 +269,7 @@ header nav .nav-tools .default-content-wrapper p::after {
     overflow: visible;
   }
   header .nav-wrapper {
-  height: var(--nav-height-initial); /* ← use initial here */
+  height: var(--nav-height-initial); 
   transition: height 0.3s ease, padding 0.3s ease;
 }
   header nav .nav-hamburger {
