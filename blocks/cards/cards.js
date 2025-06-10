@@ -22,9 +22,9 @@ export default async function decorate(block) {
     console.warn('Error fetching query-index.json:', e);
   }
 
-  // ======================
+ 
   // Variant: card__click
-  // ======================
+  /*
   if (variants.includes('click')) {
     const magazineArticles = indexData.filter(entry =>
       entry.path && entry.path.startsWith('/magazine/')
@@ -76,7 +76,7 @@ export default async function decorate(block) {
     block.textContent = '';
     block.appendChild(ul);
   }
-
+*/
   // Add SVG icons in author variant
 if (variants.includes('author')) {
   const iconMap = {

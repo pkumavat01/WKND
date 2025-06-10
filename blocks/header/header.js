@@ -233,8 +233,6 @@
       }
     }
 
-
-    // Close overlay when clicking outside
     overlay.addEventListener('click', () => {
       nav.setAttribute('aria-expanded', 'false');
       toggleAllNavSections(navSections, false);

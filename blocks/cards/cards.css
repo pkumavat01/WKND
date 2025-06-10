@@ -1,47 +1,90 @@
 
-.card__click-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+.cards.click.block {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+      flex-wrap: wrap;
+
 }
 
-.card__click-list > li {
-  background-color: var(--background-color);
+.cards.click.block > div {
+  display: flex;
+      flex-grow: 1;
+    flex-direction: column;
+    background-color: #fff;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width:300px;
+}
+.cards.click.block >div>div:first-child{
+      width: 100%;
+    height: 200px;
+    overflow: hidden;
 }
 
-.card__click-body {
-  margin: 0;
-}
-
-.card__click-image {
-  line-height: 0;
-}
-.card__click-body h3{
-  margin: 0.5rem 0 0.5rem;
-    font-size: 1.2rem;
-    color: #222;
-    text-transform: uppercase;
-    padding: 0 0 1rem 0;
-    line-height: 30px;
-}
-
-.card__click-image img {
+.cards.click.block [data-valign="middle"]:first-child picture {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+    height: 200px;
+    overflow: hidden;
 }
 
-.card__click-body p {
-  overflow: hidden;         
-  white-space: nowrap;     
-  text-overflow: ellipsis;  
-  margin: 0.5rem 0; 
-  text-transform: uppercase;        
+.cards.click.block [data-valign="middle"]:first-child img {
+     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Content area */
+.cards.click.block [data-valign="middle"]:last-child {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+/* Heading */
+.cards.click.block [data-valign="middle"]:last-child p:first-of-type {
+  font-size: 1.2rem;
+  color: #222;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+  font-weight: 400;
+}
+
+/* Description */
+.cards.click.block> div> div:last-child p:nth-of-type(2) {
   font-size: 14px;
   color: #555;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; 
+  -webkit-box-orient: vertical;
+  margin: 0 0 1rem 0;
+}
+
+/* Button link */
+.cards.click.block .button-container {
+  margin-top: auto;
+}
+
+.cards.click.block .button-container a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #222;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cards.click.block .button-container a:hover {
+  background-color: #555;
 }
 
 .cards.column.block > div > div ul{
@@ -116,7 +159,7 @@
   position: relative;
 }
 
-/* Author text */
+
 .cards.author.block > div > div[data-valign="middle"]:last-child p {
   margin: 0;
   font-size: 12px;
@@ -132,7 +175,6 @@
   margin-top: -10px;
 }
 
-/* Optional custom positioning (verify if still needed) */
 .cards.author.block > div > div[data-valign="middle"] p:nth-of-type(2) {
   margin-left: -175px;
   margin-top: 40px;
@@ -142,14 +184,13 @@
   margin-top: 40px;
 }
 
-/* Social buttons container */
 .cards.author.block > div > div[data-valign="middle"]:last-child .button-container,
 .cards.author.block > div > div[data-valign="middle"]:last-child p.button-container {
   display: inline-block;
   margin-top: 0.5rem;
 }
 
-/* Social buttons */
+
 .cards.author.block a.button {
   display: inline-flex;
   justify-content: center;
@@ -165,7 +206,7 @@
   border: none;
 }
 
-/* SVG inside buttons */
+
 .cards.author.block a.button svg {
   width: 20px;
   height: 20px;

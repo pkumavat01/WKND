@@ -49,11 +49,13 @@
 
 .cards-card-body h3 {
   margin: 0.5rem 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #222;
   text-transform: uppercase;
-  padding: 0 0 1rem 0;
+  padding: 0 0 0.8rem 0;
   line-height:30px;
+  font-family: var(--body-font-family);
+  font-weight: 600;
 }
 
 .cards-card-body p {
@@ -61,7 +63,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
   color: #555;
   text-transform: uppercase;
 }

@@ -13,7 +13,7 @@
   position: relative;
 }
 
-.blocked-articles.block h2 {
+.blocked-articles.block h3 {
   font-size: 20px;
   margin: 0 0 10px;
   color: #848484;

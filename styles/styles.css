@@ -223,7 +223,6 @@ button {
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
-  /*overflow-wrap: break-word;*/
 }
 
 a:hover {
@@ -373,6 +372,7 @@ main .section.highlight {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   font-weight: 400;
+  font-family: var(--heading-font-family);
 }
 
 .article-content h2::after {
@@ -428,6 +428,9 @@ main .section.highlight {
   flex-direction: column;
 }
 /*home page heading*/
+.magazine-page h2,
+.about-page h2,
+.faqs-page h2,
 .home-page h2{
   position: relative;
   left:0;
@@ -439,12 +442,18 @@ main .section.highlight {
   padding: 1rem; 
   font-weight: 400;
 }
+.magazine-page h1,
+.about-page h1,
+.faqs-page h1,
 .home-page h1{
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 1rem;
-  padding-bottom: 1rem;
+  padding-left: 1rem;
 }
+.magazine-page h2::after,
+.about-page h2::after,
+.faqs-page h2::after,
 .home-page h2::after {
   content: '';
   position: absolute;
