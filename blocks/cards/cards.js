@@ -5,7 +5,7 @@ export default async function decorate(block) {
 
   // Get block name and variant(s)
   const blockName = block.dataset.blockName; // e.g., "cards"
-  const classList = Array.from(block.classList); // e.g., ["cards", "columns", "block"]
+  const classList = Array.from(block.classList); // e.g., ["cards", .]
   const variants = classList.filter(cls => cls !== blockName && cls !== 'block'); // e.g., ["click"] or ["columns"]
 
   // Fetch article index
