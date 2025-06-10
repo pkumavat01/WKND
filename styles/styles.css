@@ -362,8 +362,17 @@ main .section.highlight {
   margin: 0;
   text-align: justify;
 }
-.article-content p a{
-  background-color: pink;
+.article-content main p a{
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  text-transform: uppercase;
+  color:black;
+  
+}
+.article-content main p a::after {
+    content: '▶';
+    padding: 3px;
+    color: var(--link-hover-color);
 }
 
 .article-content h2 {
