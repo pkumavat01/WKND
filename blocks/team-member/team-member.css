@@ -25,7 +25,8 @@
 .team-member h3 {
   font-size: 1.5rem;
   margin-top: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
+  font-family: var(--heading-font-family);
 }
 
 .team-member h5 {
@@ -34,6 +35,7 @@
   margin: 0.5rem 0 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: var(--body-font-family)
 }
 .social-icons {
   display: flex;
