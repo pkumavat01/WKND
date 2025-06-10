@@ -367,14 +367,20 @@ main .section.highlight {
   font-weight: 600;
   text-transform: uppercase;
   color:black;
-  
+  text-decoration: none;
 }
 .article-content main p a::after {
     content: '▶';
     padding: 3px;
     color: var(--link-hover-color);
 }
-
+.article-content main p a.button{
+  color:white;
+  background-color: black;
+}
+.article-content main p a.button::after{
+  content:'';
+}
 .article-content h2 {
   position: relative;
   left: 0;
