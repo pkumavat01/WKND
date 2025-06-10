@@ -427,7 +427,40 @@ main .section.highlight {
   display: flex;
   flex-direction: column;
 }
-
+/*home page heading*/
+.home-page h2{
+  position: relative;
+  left:0;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 2rem;
+  
+  margin-bottom: 1rem;
+  padding: 1rem; 
+  font-weight: 400;
+}
+.home-page h1{
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+.home-page h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;       
+  height: 2px;     
+  background: #ffea00;
+  border-radius: 2px;
+}
+.home-page h3{
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
 
 @media (min-width:600px) {
   .article-content-wrapper {
