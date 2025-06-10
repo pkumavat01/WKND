@@ -362,6 +362,9 @@ main .section.highlight {
   margin: 0;
   text-align: justify;
 }
+.article-content p a{
+  background-color: pink;
+}
 
 .article-content h2 {
   position: relative;
